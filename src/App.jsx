@@ -1,12 +1,15 @@
 import React from "react";
+import { useState } from "react";
 
 const App = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen bg-gray-100 flex flex-col">
         {/* Navbar */}
-        <nav className="bg-gray-800 text-white p-4">
-          <div className="container mx-auto flex items-center justify-between">
+        <nav className="bg-gray-800 text-white p-4 flex justify-center items-center flex-grow">
+          <div className="container mx-auto flex items-center justify-center space-x-8">
             <div className="text-lg font-bold">MovieApp</div>
             <div className="flex space-x-6">
               <a href="/" className="hover:text-gray-400">
@@ -16,14 +19,27 @@ const App = () => {
                 All Movies
               </a>
               <div className="relative">
-                <button className="hover:text-gray-400">Genre</button>
-                <div className="absolute hidden bg-white shadow-lg mt-2 right-0 w-40 rounded-md">
-                  <ul>
-                    <li className="px-4 py-2 hover:bg-gray-100">Action</li>
-                    <li className="px-4 py-2 hover:bg-gray-100">Comedy</li>
-                    <li className="px-4 py-2 hover:bg-gray-100">Drama</li>
-                  </ul>
-                </div>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="hover:text-gray-400"
+                >
+                  Genre
+                </button>
+                {isDropdownOpen && (
+                  <div className="absolute bg-gray-700 shadow-lg mt-2 right-0 w-40 rounded-md z-10">
+                    <ul>
+                      <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
+                        Action
+                      </li>
+                      <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
+                        Comedy
+                      </li>
+                      <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
+                        Drama
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>
