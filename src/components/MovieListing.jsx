@@ -1,5 +1,4 @@
 import React from "react";
-import movies from "../movies.json";
 
 const MovieListing = ({ movie }) => {
   return (
