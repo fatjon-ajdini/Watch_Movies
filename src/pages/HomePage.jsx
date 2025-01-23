@@ -7,7 +7,6 @@ import ViewAllMovies from "../components/ViewAllMovies";
 const HomePage = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <MovieListings />
       <ViewAllMovies />

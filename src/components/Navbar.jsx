@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,12 +11,12 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-center space-x-8">
         <img src={logo} alt="logo" className="h-10" />
         <div className="flex space-x-6">
-          <a href="/" className="hover:text-gray-400">
+          <Link to="/" className="hover:text-gray-400">
             Home
-          </a>
-          <a href="/movies" className="hover:text-gray-400">
+          </Link>
+          <Link to="/movies" className="hover:text-gray-400">
             All Movies
-          </a>
+          </Link>
           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}

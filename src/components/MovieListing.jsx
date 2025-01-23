@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MovieListing = ({ movie }) => {
   const [showFullDescription, setFullDescription] = useState(false);
@@ -28,12 +29,12 @@ const MovieListing = ({ movie }) => {
         </button>
       </div>
       <div className="p-4 flex justify-center">
-        <a
-          href={`/movie/${movie.id}`}
+        <Link
+          to={`/movie/${movie.id}`}
           className="bg-sky-600 text-white-800 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-400 transition duration-300"
         >
           Watch It
-        </a>
+        </Link>
       </div>
     </div>
   );
