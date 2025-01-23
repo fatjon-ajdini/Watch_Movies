@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <MovieListings />
+      <MovieListings isHome={true} />
       <ViewAllMovies />
     </>
   );

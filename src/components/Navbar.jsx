@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="menu-hover hover:bg-sky-600 px-4 py-2 rounded-full">
               Genre
             </div>
-            <div className="z-30 invisible absolute flex flex-col bg-sky-600 shadow-lg mt-2 w-full rounded-md group-hover:visible">
+            <div className="z-50 invisible absolute flex flex-col bg-sky-600 shadow-lg mt-2 w-full rounded-md group-hover:visible">
               <NavLink
                 to="/genre/action"
                 className="hover:bg-sky-900 block px-4 py-2 cursor-pointer"
