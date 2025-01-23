@@ -1,44 +1,51 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    isActive
+      ? "bg-sky-600 px-4 py-2 rounded-full"
+      : "hover:bg-sky-600 px-4 py-2 rounded-full";
 
   return (
     <nav className="bg-sky-900 text-white p-4 flex justify-center items-center flex-grow">
       <div className="container mx-auto flex items-center justify-center space-x-8">
         <img src={logo} alt="logo" className="h-10" />
-        <div className="flex space-x-6">
-          <Link to="/" className="hover:text-gray-400">
+        <div className="flex justify-between items-center space-x-6">
+          <NavLink to="/" className={linkClass}>
             Home
-          </Link>
-          <Link to="/movies" className="hover:text-gray-400">
+          </NavLink>
+          <NavLink to="/movies" className={linkClass}>
             All Movies
-          </Link>
-          <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:text-gray-400"
-            >
+          </NavLink>
+          <div className="group relative cursor-pointer py-2">
+            <div className="menu-hover hover:bg-sky-600 px-4 py-2 rounded-full">
               Genre
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute bg-sky-600 shadow-lg mt-2 right-0 w-40 rounded-md z-10">
-                <ul>
-                  <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
-                    Action
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
-                    Comedy
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-500 cursor-pointer">
-                    Drama
-                  </li>
-                </ul>
-              </div>
-            )}
+            </div>
+            <div className="z-30 invisible absolute flex flex-col bg-sky-600 shadow-lg mt-2 w-full rounded-md group-hover:visible">
+              <NavLink
+                to="/genre/action"
+                className="hover:bg-sky-900 block px-4 py-2 cursor-pointer"
+              >
+                Action
+              </NavLink>
+              <NavLink
+                to="/genre/comedy"
+                className="hover:bg-sky-900 block px-4 py-2 cursor-pointer"
+              >
+                Comedy
+              </NavLink>
+              <NavLink
+                to="/genre/drama"
+                className="hover:bg-sky-900 block px-4 py-2 cursor-pointer"
+              >
+                Drama
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>
