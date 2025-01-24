@@ -30,7 +30,7 @@ const MovieListing = ({ movie }) => {
       </div>
       <div className="p-4 flex justify-center">
         <Link
-          to={`/movie/${movie.id}`}
+          to={`/movies/${movie.id}`}
           className="bg-sky-600 text-white-800 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-400 transition duration-300"
         >
           Watch It

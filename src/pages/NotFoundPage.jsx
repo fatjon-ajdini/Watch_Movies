@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NotFoundPage = () => {
   return (
-    <div className="bg-sky-600 flex flex-col items-center h-screen pt-12">
+    <div className="bg-white flex flex-col items-center pt-12">
       <p className="text-8xl mt-5 pb-5">Oops!</p>
       <div className="flex flex-row h-100 mt-15 items-center justify-items-center">
         <FaExclamationTriangle className="text-yellow-400 text-[150px]" />
