@@ -1,11 +1,11 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { useState, useEffect } from "react";
-import SearchbarResults from "./SearchbarResults";
+import { useState } from "react";
+import SearchResultListing from "./SearchResultListing";
 
-const Searchbar = ({ setResults }) => {
+const Searchbar = () => {
   const [input, setInput] = useState("");
-  const [movies, setMovies] = useState([]);
+  const [results, setResults] = useState([]);
 
   const fetchMovies = async (value) => {
     const apiURL = "/api/movies";
@@ -57,6 +57,7 @@ const Searchbar = ({ setResults }) => {
             Search
           </button>
         </div>
+        <SearchResultListing results={results} />
       </form>
     </>
   );

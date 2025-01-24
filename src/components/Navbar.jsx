@@ -4,8 +4,6 @@ import logo from "../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const linkClass = ({ isActive }) =>
     isActive
       ? "bg-sky-600 px-4 py-2 rounded-full"
