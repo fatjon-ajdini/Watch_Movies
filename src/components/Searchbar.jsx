@@ -1,11 +1,12 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import SearchResultListing from "./SearchResultListing";
 
 const Searchbar = () => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
+  const [openListing, setOpenListing] = useState(false);
 
   const fetchMovies = async (value) => {
     const apiURL = "/api/movies";
@@ -30,7 +31,7 @@ const Searchbar = () => {
 
   return (
     <>
-      <form className="max-w-md mx-auto">
+      <div className="max-w-md mx-auto">
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -57,8 +58,10 @@ const Searchbar = () => {
             Search
           </button>
         </div>
-        <SearchResultListing results={results} />
-      </form>
+        <div className="mt-3">
+          <SearchResultListing results={results} />
+        </div>
+      </div>
     </>
   );
 };

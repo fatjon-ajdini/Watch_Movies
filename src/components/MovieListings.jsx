@@ -28,7 +28,7 @@ const MovieListings = ({ isHome = false }) => {
       {loading ? (
         <Spinner loading={loading} />
       ) : (
-        <div className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="relative container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {movies.map((movie) => (
             <MovieListing key={movie.id} movie={movie} />
           ))}
