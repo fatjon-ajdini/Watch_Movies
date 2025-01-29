@@ -1,12 +1,11 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { useState, useEffect, useRef } from "react";
-import SearchResultListing from "./SearchResultListing";
+import { useState } from "react";
+import SearchResult from "./SearchResult";
 
 const Searchbar = () => {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
-  const [openListing, setOpenListing] = useState(false);
 
   const fetchMovies = async (value) => {
     const apiURL = "/api/movies";
@@ -58,8 +57,13 @@ const Searchbar = () => {
             Search
           </button>
         </div>
-        <div className="mt-3">
+        {/* <div className="mt-3">
           <SearchResultListing results={results} />
+        </div> */}
+        <div className="mt-3 max-h-40 overflow-auto rounded-lg bg-sky-900 shadow-sm z-30">
+          {results.map((result, id) => {
+            return <SearchResult result={result} key={id} />;
+          })}
         </div>
       </div>
     </>
