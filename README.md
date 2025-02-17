@@ -11,10 +11,8 @@ Currently, two official plugins are available:
 
 To start the development server, use the following command:
 
-**bash**
-**npm run dev**
+-**npm run dev**
 This will launch the Vite development server, and your application will be accessible at http://localhost:3000
 
-You will need to run the command
-**npm run server**
+You will need to run the command -**npm run server**
 for the server that is in the port 5050.
